@@ -38,4 +38,5 @@ Exported 2026-10-04 from the `support` repo, `apps/kb/` → `src/`.
 ## S01E03 addition
 
 - KB page source: `src/routes/kb/incidents/4471-causes/+page.svx`
-- Static desk-view preview: `preview/4471-causes.html`
+- SvelteKit + MDsveX build: `npm ci && npm run build`
+- Rendered desk view: `build/kb/incidents/4471-causes.html`
