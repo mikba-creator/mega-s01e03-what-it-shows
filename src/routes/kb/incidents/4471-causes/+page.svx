@@ -1,0 +1,37 @@
+---
+layout: runbook
+title: '#4471 · two causes in the date merge'
+owner: support desk
+status: draft
+reviewed: '2026-10-28'
+signature: 'mikba-creator'
+---
+
+<script lang="ts">
+  import CauseTable from '#lib/kb/CauseTable.svelte';
+  import RenderStamp from '#lib/kb/RenderStamp.svelte';
+
+  const signature = 'mikba-creator';
+</script>
+
+Ticket #4471 combines two different date-input failures. A matching subject hid the split; the cause depends on the tenant's locale, form, and channel, not the intake tag.
+
+## Reconciled counts
+
+The export has overlapping pages, so count each report ID once. The table applies the KB's cause logic and shows the reports, affected tenants, tags, and dates for each cause.
+
+<CauseTable ticket={4471} />
+
+## Parser: month-first parsing
+
+The shared parser treats every date as month-first. For day-first tenants, it swaps the day and month. Keep these reports in the parser issue.
+
+## Hint: booking-v3 form
+
+The booking-v3 form displays a month-first hint to day-first tenants. People follow the hint, but the form reads the date in the tenant's order, so the date is reversed. Track this separately from the shared parser.
+
+## Triage
+
+Use the tenant's locale, form, and channel to identify the cause. Do not group by subject or trust the intake tag alone. The five `oneDayMove` notes are footnotes within their tenant-based causes, not a third group.
+
+<RenderStamp {signature} />
