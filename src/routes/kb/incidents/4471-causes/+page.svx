@@ -4,14 +4,14 @@ title: '#4471 · two causes in the date merge'
 owner: support desk
 status: draft
 reviewed: '2026-10-28'
-signature: 'mikba-creator'
+signature: 'v1.eyJzdWIiOiIyMDY5IiwiYXVkIjoiY2hhbGxlbmdlOndoYXQtaXQtc2hvd3MiLCJpYXQiOjE3OTMyMTQ0ODYsImV4cCI6MTc5MzMwMDg4Nn0.6YZq4vledNUUQbtRVrpr2LG8CD2KPfxEIfSRVg7qdek'
 ---
 
 <script lang="ts">
   import CauseTable from '#lib/kb/CauseTable.svelte';
   import RenderStamp from '#lib/kb/RenderStamp.svelte';
 
-  const signature = 'mikba-creator';
+  const signature = 'v1.eyJzdWIiOiIyMDY5IiwiYXVkIjoiY2hhbGxlbmdlOndoYXQtaXQtc2hvd3MiLCJpYXQiOjE3OTMyMTQ0ODYsImV4cCI6MTc5MzMwMDg4Nn0.6YZq4vledNUUQbtRVrpr2LG8CD2KPfxEIfSRVg7qdek';
 </script>
 
 Ticket #4471 combines two different date-input failures. A matching subject hid the split; the cause depends on the tenant's locale, form, and channel, not the intake tag.
