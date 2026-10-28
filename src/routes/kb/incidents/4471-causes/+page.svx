@@ -30,6 +30,10 @@ The shared parser treats every date as month-first. For day-first tenants, it sw
 
 The booking-v3 form displays a month-first hint to day-first tenants. People follow the hint, but the form reads the date in the tenant's order, so the date is reversed. Track this separately from the shared parser.
 
+## Desk update · 5 October
+
+The desk closed #4471 on 5 October. The parser cause is fixed by `fix(dates): parse dd/mm for eu locales`. The booking-v3 hint cause will not be fixed because the form was retired.
+
 ## Triage
 
 Use the tenant's locale, form, and channel to identify the cause. Do not group by subject or trust the intake tag alone. The five `oneDayMove` notes are footnotes within their tenant-based causes, not a third group.
